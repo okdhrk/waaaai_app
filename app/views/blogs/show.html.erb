@@ -1,0 +1,10 @@
+<h1>Blogs/show</h1>
+  <%= attachment_image_tag @blog, :image %>
+  <p>Title:<%= @blog.title %></p>
+  <p>Opinion:<%= @blog.body %></p>
+  <p>Category:<%= @blog.category %></p>
+  <p>User name:<%= @blog.user.name %></p>
+  <% if @blog.user == current_user %>
+    <%= link_to "Destroy", blog_path(@blog), method: :delete, "data-confirm" => "Can i really erase it ?" %>
+  <% end %>
+    
